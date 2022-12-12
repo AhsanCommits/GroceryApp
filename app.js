@@ -138,16 +138,6 @@ function editLocalStorage(id, value) {
 function getLocalStorage() {
     return localStorage.getItem('list') ? JSON.parse(localStorage.getItem("list")) : [];
 }
-// Local Storage API
-// setItem
-// getItem
-// removeItem
-// save as strings
-// localStorage.setItem("orange", JSON.stringify(['item', 'value']))
-
-// const oranges = JSON.parse(localStorage.getItem('orange'));
-// console.log(oranges)
-// localStorage.removeItem('orange')
 // ****** SETUP ITEMS **********
 function setupItems() {
     let items = getLocalStorage();
@@ -168,22 +158,32 @@ function createListItem(id, value) {
     attr.value = id;
     element.setAttributeNode(attr);
     element.innerHTML = ` <p class="title">${value}</p>
-                    <div class="btn-container">
+    <div class="btn-container">
                         <button type="button" class="edit-btn">
-                            <i class="fas fa-edit"></i>
+                        <i class="fas fa-edit"></i>
                         </button>
                         <button type="button" class="delete-btn">
-                            <i class="fas fa-trash"></i>
+                        <i class="fas fa-trash"></i>
                         </button>
-                    </div>`;
-    // delete item
-    const deleteBtn = element.querySelector('.delete-btn');
-    // edit item
-    const editBtn = element.querySelector('.edit-btn');
-
-    deleteBtn.addEventListener('click', deleteItem);
-    editBtn.addEventListener('click', editItem);
-
-    // append child
-    list.appendChild(element);
-}
+                        </div>`;
+                        // delete item
+                        const deleteBtn = element.querySelector('.delete-btn');
+                        // edit item
+                        const editBtn = element.querySelector('.edit-btn');
+                        
+                        deleteBtn.addEventListener('click', deleteItem);
+                        editBtn.addEventListener('click', editItem);
+                        
+                        // append child
+                        list.appendChild(element);
+                    }
+                    // Local Storage API
+                    // setItem
+                    // getItem
+                    // removeItem
+                    // save as strings
+                    // localStorage.setItem("orange", JSON.stringify(['item', 'value']))
+                    
+                    // const oranges = JSON.parse(localStorage.getItem('orange'));
+                    // console.log(oranges)
+                    // localStorage.removeItem('orange')
