@@ -170,10 +170,10 @@ function createListItem(id, value) {
     element.innerHTML = ` <p class="title">${value}</p>
                     <div class="btn-container">
                         <button type="button" class="edit-btn">
-                            <i class="fas fa-edit"> Edit</i>
+                            <i class="fas fa-edit"></i>
                         </button>
                         <button type="button" class="delete-btn">
-                            <i class="fas fa-trash"> Remove</i>
+                            <i class="fas fa-trash"></i>
                         </button>
                     </div>`;
     // delete item
